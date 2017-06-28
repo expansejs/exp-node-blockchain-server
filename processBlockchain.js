@@ -1,6 +1,6 @@
 const leveldb = require('level')
-const VM = require('ethereumjs-vm')
-const Blockchain = require('ethereumjs-blockchain')
+const VM = require('expansejs-vm')
+const Blockchain = require('expansejs-blockchain')
 const StateTrie = require('merkle-patricia-tree/secure')
 
 var blockchainDb = leveldb('./blockchaindb')

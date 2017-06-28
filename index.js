@@ -1,20 +1,20 @@
 const leveldb = require('level')
 const async = require('async')
 const semaphore = require('semaphore')
-const ethUtils = require('ethereumjs-util')
+const ethUtils = require('expansejs-util')
 const BN = ethUtils.BN
-const Blockchain = require('ethereumjs-blockchain')
-const Block = require('ethereumjs-block')
+const Blockchain = require('expansejs-blockchain')
+const Block = require('expansejs-block')
 const Network = require('devp2p')
-const genesisHash = require('ethereum-common').genesisHash.v.slice(2)
-const EthPeerManager = require('devp2p-eth')
+const genesisHash = require('expanse-common').genesisHash.v.slice(2)
+const EthPeerManager = require('devp2p-exp')
 const SyncManager = require('./syncManager.js')
 
 var db = leveldb('./blockchaindb')
 var blockchain = new Blockchain(db, false)
 
 var self = this
-var port = 30304
+var port = 42787
 
 doTheTango()
 
@@ -122,7 +122,7 @@ function doTheTango(){
     function (done) {
       network.connect({
         address: '127.0.0.1',
-        port: 30303
+        port: 42786
       }, done)
     }
   ])
